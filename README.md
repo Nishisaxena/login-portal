@@ -53,15 +53,6 @@ login-portal/
 
 
 ---
-
- 🔗 Live Demo
-
-*Add your deployed link here (Netlify / Vercel / GitHub Pages)*
-Example:
-[https://your-demo-link.com](https://your-demo-link.com)
-
----
-
  🤝 Contributing
 
 Feel free to contribute!
