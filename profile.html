@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="profile-box" id="profileBox" style="display:none;">
+    <div class="profile-avatar" id="profileAvatar">U</div>
+    <div>
+      <div class="profile-name" id="profileName"></div>
+      <div class="profile-role" id="profileRole"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Welcome</h2>
+    <p id="details"></p>
+    <button class="btn-secondary" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const raw = localStorage.getItem('currentUser');
+    if (!raw) {
+      window.location.href = 'index.html';
+    } else {
+      const user = JSON.parse(raw);
+      document.getElementById('profileBox').style.display = 'flex';
+      document.getElementById('profileName').innerText = user.fullName;
+      document.getElementById('profileRole').innerText =
+        user.role.charAt(0).toUpperCase() + user.role.slice(1);
+      document.getElementById('profileAvatar').innerText =
+        user.fullName ? user.fullName.charAt(0).toUpperCase() : 'U';
+
+      // simple text, can be improved per role
+      document.getElementById('details').innerText =
+        'You are logged in as ' + user.fullName + ' (' + user.role + ').';
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

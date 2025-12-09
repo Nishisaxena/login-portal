@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Role Signup/Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Choose Your Role</h2>
+    <div class="roles">
+      <button onclick="openForm('student')">Student</button>
+      <button onclick="openForm('alumni')">Alumni</button>
+      <button onclick="openForm('institute')">Institute</button>
+    </div>
+  </div>
+
+  <!-- Signup/Login Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h3 id="roleTitle"></h3>
+      <form id="roleForm">
+        <input type="text" placeholder="Full Name" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit">Sign Up</button>
+        <button type="submit">login</button>
+      </form>
+      <footer>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+  <!-- Login Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h3 id="roleTitle"></h3>
+      <form id="roleForm">
+        <input type="text" placeholder="Full Name" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit">Sign Up</button>
+        <button type="submit">login</button>
+      </form>
+      <footer>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
